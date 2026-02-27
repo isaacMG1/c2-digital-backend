@@ -1,5 +1,6 @@
 import { DataTypes } from "sequelize";
 import db from "../config/db.js";
+import Rol from "./Rol.js";
 
 const Usuario = db.define("Usuario", {
   id: {
@@ -16,15 +17,32 @@ const Usuario = db.define("Usuario", {
     allowNull: false,
     unique: true,
   },
-  contraseña: {
+  password: {
     type: DataTypes.STRING(255),
     allowNull: false,
   },
-  rol: {
-    type: DataTypes.ENUM("admin", "usuario"),
-    allowNull: false,
-    defaultValue: "usuario",
+
+  permisosAdicionales: {
+  type: DataTypes.JSON,
+  allowNull: true,
+  },
+
+  permisosDenegados: {
+    type: DataTypes.JSON,
+    allowNull: true,
+  },
+
+  resetCode: {
+    type: DataTypes.STRING(10),
+    allowNull: true,
+  },
+  resetCodeExpires: {
+    type: DataTypes.DATE,
+    allowNull: true,
   },
 });
+
+Usuario.belongsTo(Rol, { foreignKey: "rolId" });
+Rol.hasMany(Usuario, { foreignKey: "rolId" });
 
 export default Usuario;

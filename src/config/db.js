@@ -4,7 +4,6 @@ import mysql from "mysql2/promise";
 
 dotenv.config();
 
-// Crear base si no existe
 const createDatabaseIfNotExists = async () => {
   try {
     const connection = await mysql.createConnection({
@@ -24,7 +23,6 @@ const createDatabaseIfNotExists = async () => {
 
 await createDatabaseIfNotExists();
 
-// Conexión principal
 const db = new Sequelize(
   process.env.DB_NAME,
   process.env.DB_USER,
