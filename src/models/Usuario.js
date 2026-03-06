@@ -21,17 +21,14 @@ const Usuario = db.define("Usuario", {
     type: DataTypes.STRING(255),
     allowNull: false,
   },
-
   permisosAdicionales: {
-  type: DataTypes.JSON,
-  allowNull: true,
+    type: DataTypes.JSON,
+    allowNull: true,
   },
-
   permisosDenegados: {
     type: DataTypes.JSON,
     allowNull: true,
   },
-
   resetCode: {
     type: DataTypes.STRING(10),
     allowNull: true,

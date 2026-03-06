@@ -19,7 +19,7 @@ const Expediente = db.define("expedientes", {
   },
 
   clave: {
-    type: DataTypes.STRING(30),
+    type: DataTypes.STRING(100),
   },
 
   caja: DataTypes.INTEGER,

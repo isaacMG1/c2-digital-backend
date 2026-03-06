@@ -1,5 +1,7 @@
 import express from "express";
-import { registrarUsuario, obtenerRoles , loginUsuario, usuarioActual, enviarCodigoReset, verificarCodigo, cambiarPassword, obtenerUsuarios, actualizarUsuario, eliminarUsuario, verificarCorreo, obtenerPermisosUsuario, actualizarPermisosUsuario } from "../controllers/usuarioController.js";
+import { registrarUsuario, obtenerRoles , loginUsuario, usuarioActual, enviarCodigoReset, 
+    verificarCodigo, cambiarPassword, obtenerUsuarios, actualizarUsuario, eliminarUsuario,
+    verificarCorreo, obtenerPermisosUsuario, actualizarPermisosUsuario } from "../controllers/usuarioController.js";
 import { verifyToken } from "../middleware/authMiddleware.js";
 import { requirePermission } from "../middleware/permissionMiddleware.js";
 import { PERMISOS } from "../utils/permisos.js";

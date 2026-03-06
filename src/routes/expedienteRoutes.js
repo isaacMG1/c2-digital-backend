@@ -38,4 +38,5 @@ router.put("/archivar/:id", verifyToken, requirePermission(PERMISOS.ARCHIVAR_DOC
 router.put("/restaurar/:id", verifyToken, requirePermission(PERMISOS.RESTAURAR_DOCUMENTO),restaurarExpediente);
 router.get("/buscar-todos", verifyToken, requirePermission(PERMISOS.BUSCAR_ARCHIVO),buscarExpedientesAdmin);
 
+
 export default router;
